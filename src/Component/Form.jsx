@@ -1,52 +1,53 @@
 import React, { useState } from "react";
 import ButtonGreen from "./ButtonGreen";
-// import './Form.css'
-
-
 const Form = () => {
-    const [fullName, setFullName] = useState({
-        fname: '',
-        lname: '',
-        email: '',
-        phone: ''
-    })
-    const [fullName1, setFullName1] = useState('')
-    const inputEvent = (e) => {
-        const { name, value } = e.target;
-        setFullName((preVal) => {
-            return {
-                ...preVal,
-                [name]: value
-            }
+    const [input, setInput] = useState({
+        fname:'',
+        email:'',
+        password:'',
+        tel:''
+    });
+    const [inputList, setInputList] = useState([]);
+    const getInput=(e)=>{
+        const {name,value} =e.target;
+        setInput((oldItem)=>{
+            return {...oldItem,
+                    [name] : value,
+                    }
         })
     }
-
-    const clickBtn = (e) => {
+    
+    const submit=(e)=>{
         e.preventDefault();
-
+        setInputList(input);
+        setInput({
+            fname:'',
+            email:'',
+            password:'',
+            tel:''
+        })
     }
-
     return (
         <>
         <section className="formSection">
-            <form action="" onSubmit={clickBtn}>
-                <div id="form">
-                    <p>request a quote</p>
+            <form action="" onSubmit={submit}>
+            <div id="form">
+            <p>request a quote</p>
                     <h2>booking for knowing estimate</h2>
-                    {/* <h1>F-name {fullName.fname}</h1>
-                    <h1>L-name {fullName.lname}</h1>
-                    <h1>email {fullName.email}</h1>
-                    <h1>phone {fullName.phone}</h1> */}
-                    <input onChange={inputEvent} name="fname" value={fullName.fname} type="text" placeholder="First Name" id="formInput" />
-                    <input onChange={inputEvent} name="lname" value={fullName.lname} id="formInput" type="text" placeholder="Second Name" />
-                    <input onChange={inputEvent} id="formInput" type="email" name="email" value={fullName.email} placeholder="Enter your Email" />
-                    <input onChange={inputEvent} id="formInput" type="tel" name="phone" value={fullName.phone} placeholder="Enter your phone" />
-                    <button className="btn" type="submit" ><ButtonGreen text='click me'/></button>
+                <input type="text" value={input.fname} name="fname" id="" onChange={getInput} placeholder="First Name" />
+                <input type="email" value={input.email}  name="email" id="" onChange={getInput}  placeholder="Enter your Email"/>
+                <input type="password" value={input.password}  name="password" id="" onChange={getInput}  placeholder="Enter your Password"/>
+                <input type="tel" value={input.tel}  name="tel" id="tel" onChange={getInput} placeholder="Enter your phone"/>
+                <button className="btn" type="submit" ><ButtonGreen text='click me'/></button>
                 </div>
             </form>
-        </section>
+            <p>{inputList.fname}</p>
+            <p>{inputList.email}</p>
+            <p>{inputList.password}</p>
+            <p>{inputList.tel}</p>
+            </section>
         </>
-    )
-}
+    );
+};
 
 export default Form;

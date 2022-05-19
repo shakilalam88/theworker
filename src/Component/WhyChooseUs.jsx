@@ -1,5 +1,6 @@
 import React from 'react'
 import Accordion from './Accordion';
+import {accor} from '../Sdata'
 
 const WhyChooseUs = () => {
   return (
@@ -7,7 +8,7 @@ const WhyChooseUs = () => {
     <section className='whychooseus'>
       <h2>why choose us</h2>
       <div className="whysection">
-      <div className="left"><Accordion/></div>
+      <div className="left"><Accordion item={accor}/></div>
       <div className="right">
         <img src="./images/delivery.jpg" alt="" />
       </div>

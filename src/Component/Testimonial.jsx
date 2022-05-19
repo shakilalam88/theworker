@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from 'react';
-// import { FiChevronRight, FiChevronLeft } from 'react-icons/fi';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-// import { FaQuoteRight } from 'react-icons/fa';
 import {testimonial} from '../Sdata';
-// import './Slider.css'
 
 function Testimonial() {
   const [people, setPeople] = useState(testimonial);

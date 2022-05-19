@@ -1,27 +1,23 @@
 import React from 'react'
 import HeroImage from '../Component/HeroImage'
-import { service } from '../Sdata';
-import ServiceBarHeader from '../Component/ServiceBarHeader';
-import ServiceSection from '../Component/ServiceSection';
 import Testimonial from '../Component/Testimonial';
 import Form from '../Component/Form';
 import Outlet from '../Component/Outlet';
 import BestOffer from '../Component/BestOffer';
 import OurService from '../Component/OurService';
 import WhyChooseUs from '../Component/WhyChooseUs';
-
+import HomePageService from '../Component/HomePageService';
+import {RelatedService} from '../Sdata'
+import  {service} from '../Sdata'
 const Home = () => {
   return (
     <>
       <HeroImage />
       <div className="wrapper">
         <OurService/>
-        <ServiceBarHeader leftText='service' rightText='related products' />
-        <ServiceSection data={service} />
-        <ServiceBarHeader leftText='regular service' rightText='' />
-        <ServiceSection data={service} />
-        <ServiceBarHeader leftText='' rightText='' />
-        <ServiceSection data={service} />
+        <HomePageService text1='service' text2='related service' dataLeft={service} dataRight={RelatedService}/>
+        <HomePageService text1='service' text2='related service' dataLeft={service} dataRight={RelatedService}/>
+        <HomePageService text1='service' text2='related service' dataLeft={service} dataRight={RelatedService}/>
         <BestOffer/>
         <WhyChooseUs/>
         <Testimonial />

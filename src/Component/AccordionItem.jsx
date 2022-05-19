@@ -4,9 +4,9 @@ const AccordionItem = ({id,info,title}) => {
     const [toggle, setToggle] = useState(false);
   return (
       <>
-        <article className='question'>
+      <article className='question'>
             <header>
-            <h4>{title}</h4>
+            <h3>{title}</h3>
             <button className='btnaccorNew' onClick={()=>{setToggle(!toggle)}}>{toggle?'-':"+"}</button>
             </header>
             {/* {toggle ?<p>{info}</p>:null} */}

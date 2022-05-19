@@ -9,7 +9,7 @@ const HeroImage = () => {
         <div className="heroText">
           <h2>welcome to the worker</h2>
           <h1>hassle free service & product</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque dicta, <br/>explicabo repellat unde in est accusamus facere asperiores ipsum perspiciatis?</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque dicta, explicabo repellat unde in est accusamus facere asperiores ipsum perspiciatis?</p>
           <ButtonGreen text='Our Service'/>
         </div>
       </div>
